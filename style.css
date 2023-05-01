@@ -1,0 +1,160 @@
+@font-face {
+  font-family: Vazir;
+  src: url(font/Vazirmatn-Medium.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+*,
+body {
+  font-family: Vazir;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* direction: rtl; */
+}
+a {
+  text-decoration: none;
+}
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.main-bg {
+  background-image: url(./image/sky.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.road {
+  background-image: url(./image/road.jpg);
+  /* background-repeat: repeat-x; */
+  width: 500%;
+  height: 200px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  animation: road 2s linear infinite;
+}
+
+@keyframes road {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-999px);
+  }
+}
+
+.building {
+  background-image: url(./image/city.png);
+  width: 500%;
+  height: 250px;
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+  background-repeat: repeat-x;
+  animation: building 10s linear infinite;
+}
+
+@keyframes building {
+  form {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-400px);
+  }
+}
+
+.car {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14%;
+  transform: translate(-50%);
+  z-index: 3;
+  animation: move 5s linear infinite 3s;
+}
+@keyframes move {
+  0% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
+}
+
+.car img {
+  width: 100%;
+  animation: shake 1s linear infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(-1px);
+  }
+}
+
+.wheels {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50%;
+  z-index: 4;
+}
+
+.wheels img {
+  width: 74px;
+  animation: wheels 0.5s linear infinite;
+}
+@keyframes wheels {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel-front {
+  position: absolute;
+  /* left: 79px;
+  bottom: -220px; */
+
+  left: 79px;
+  bottom: -72px;
+}
+.wheel-back {
+  position: absolute;
+  /* left: -166px;
+  bottom: -219px; */
+
+  left: -166px;
+  bottom: -72px;
+}
